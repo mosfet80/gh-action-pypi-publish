@@ -127,7 +127,7 @@ repos:
     - --select
     - WPS
     additional_dependencies:
-    - wemake-python-styleguide ~= 0.17.0
+    - wemake-python-styleguide ~= 0.19.0
 
 - repo: https://github.com/PyCQA/pylint.git
   rev: v3.1.0
