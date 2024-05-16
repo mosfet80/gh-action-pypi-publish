@@ -209,7 +209,7 @@ token_exchange_url = f'https://{repository_domain}/_/oidc/mint-token'
 # Indices are expected to support `https://{domain}/_/oidc/audience`,
 # which tells OIDC exchange clients which audience to use.
 audience_url = f'https://{repository_domain}/_/oidc/audience'
-audience_resp = requests.get(audience_url)
+audience_resp = requests.get(audience_url, timeout=5)  # S113 wants a timeout
 assert_successful_audience_call(audience_resp, repository_domain)
 
 oidc_audience = audience_resp.json()['audience']
@@ -230,6 +230,7 @@ except id.IdentityError as identity_error:
 mint_token_resp = requests.post(
     token_exchange_url,
     json={'token': oidc_token},
+    timeout=5,  # S113 wants a timeout
 )
 
 try:
