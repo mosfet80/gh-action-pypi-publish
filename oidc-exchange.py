@@ -163,7 +163,7 @@ def render_claims(token: str) -> str:
     _, payload, _ = token.split('.', 2)
 
     # urlsafe_b64decode needs padding; JWT payloads don't contain any.
-    payload += "=" * (4 - (len(payload) % 4))
+    payload += '=' * (4 - (len(payload) % 4))
     claims = json.loads(base64.urlsafe_b64decode(payload))
 
     def _get(name: str) -> str:  # noqa: WPS430
