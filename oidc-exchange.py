@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import id  # pylint: disable=redefined-builtin
 import requests
 
-_GITHUB_STEP_SUMMARY = Path(os.getenv("GITHUB_STEP_SUMMARY"))
+_GITHUB_STEP_SUMMARY = Path(os.getenv('GITHUB_STEP_SUMMARY'))
 
 # The top-level error message that gets rendered.
 # This message wraps one of the other templates/messages defined below.
