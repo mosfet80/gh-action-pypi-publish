@@ -45,7 +45,7 @@ permissions:
 ```
 
 Learn more at https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#adding-permissions-settings.
-"""
+"""  # noqa: S105; not a password
 
 # Specialization of the token retrieval failure case, when we know that
 # the failure cause is use within a third-party PR.
@@ -59,7 +59,7 @@ even if `id-token: write` is explicitly configured.
 To fix this, change your publishing workflow to use an event that
 forks of your repository cannot trigger (such as tag or release
 creation, or a manually triggered workflow dispatch).
-"""
+"""  # noqa: S105; not a password
 
 # Rendered if the package index refuses the given OIDC token.
 _SERVER_REFUSED_TOKEN_EXCHANGE_MESSAGE = """
@@ -71,7 +71,7 @@ This generally indicates a trusted publisher configuration error, but could
 also indicate an internal error on GitHub or PyPI's part.
 
 {rendered_claims}
-"""
+"""  # noqa: S105; not a password
 
 _RENDERED_CLAIMS = """
 The claims rendered below are **for debugging purposes only**. You should **not**
@@ -97,7 +97,7 @@ Token request failed: the index produced an unexpected
 
 This strongly suggests a server configuration or downtime issue; wait
 a few minutes and try again.
-"""
+"""  # noqa: S105; not a password
 
 # Rendered if the package index's token response isn't a valid API token payload.
 _SERVER_TOKEN_RESPONSE_MALFORMED_MESSAGE = """
@@ -105,7 +105,7 @@ Token response error: the index gave us an invalid response.
 
 This strongly suggests a server configuration or downtime issue; wait
 a few minutes and try again.
-"""
+"""  # noqa: S105; not a password
 
 
 def die(msg: str) -> NoReturn:
