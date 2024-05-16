@@ -247,7 +247,7 @@ except requests.JSONDecodeError:
 # occurred during minting.
 if not mint_token_resp.ok:
     reasons = '\n'.join(
-        f'* `{error['code']}`: {error['description']}'
+        f'* `{error["code"]}`: {error["description"]}'
         for error in mint_token_payload['errors']
     )
 
